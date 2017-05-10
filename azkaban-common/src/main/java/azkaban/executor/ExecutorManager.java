@@ -1333,13 +1333,7 @@ public class ExecutorManager extends EventHandler implements
                       finalizeFlows.add(flow);
                     }
                   } catch (ExecutorManagerException e) {
-                    ExecutableFlow flow = e.getExecutableFlow();
-                    logger.error(e);
-
-                    if (flow != null) {
-                      logger.error("Finalizing flow " + flow.getExecutionId());
-                      finalizeFlows.add(flow);
-                    }
+                    logger.error(e + ". Update execution failed. Ignored.");
                   }
                 }
               }
